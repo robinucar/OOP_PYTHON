@@ -14,13 +14,6 @@ class Dog:
     def intro(self):
         return f'Hello, My name is {self.name}. And I am {self.age} years old.'
 
-# d = Dog('Boddy', 3)
-# s = Dog('Sakir', 2)
-# s.isBirtdayPassed()
-# d.bark()
-# print(d.intro())
-# print(s.intro())
-
 b = Dog('Boddy', 3)
 b.birtdayPassed() # age is 4
 b.birtdayPassed() # age is 5 
