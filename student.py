@@ -3,6 +3,8 @@ class Student:
         self.name = name
         self.age = age
         self.grade = grade # 0 - 100
+    def get_grade(self):
+        return self.grade
 
 class Course:
     def __init__(self, name, max_students):
@@ -16,6 +18,12 @@ class Course:
             return True
         return False
 
+    def avarage_grade(self):
+        value = 0
+        for student in self.students:
+            value += student.get_grade()
+        return value / len(self.students)
+
 s1 = Student('Robin', 34, 95)
 s2 = Student('Canan', 27, 90)
 s3 = Student('Mehmet', 34, 90)
@@ -26,4 +34,5 @@ course.add_student(s2)
 course.add_student(s3)
 print(course.students[0].name) # Robin
 print(course.students[1].name) # Canan
-print(course.students[2].name) # IndexError: list index out of range
+# print(course.students[2].name) # IndexError: list index out of range
+print(course.avarage_grade())
